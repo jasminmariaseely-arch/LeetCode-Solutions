@@ -1,15 +1,19 @@
 #include<bits/stdc++.h>
-class Solution {
+using namespace std;
+class Solution{
   public:
-    vector<int> twoSum(vector<int>& nums, int target) {
-        unordered_map<int,int>n;
-        for(int i=0;i<nums.size();i++){
-          int c=target-nums[i];
-          if(n.find(c)!=n.end()){
-            return {n[c],i};
+    vector<int>sumOfTwoNumbers(vector<int>&a,int target){
+      unordered_map<int,int>un;
+      for(int i=0;i<a.size();i++)
+      {
+          int c=target-a[i];
+          if(un.find(c)!=un.end())
+          {
+             return {un[c],i};
           }
-          n[nums[i]]=i;
-        }
-        return {};
+          un[a[i]]=i;
+
       }
-    };
+      return {};
+    }
+}
